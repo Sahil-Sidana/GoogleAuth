@@ -9,7 +9,7 @@ const Headers = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get("http://localhost:6005/login/sucess", { withCredentials: true });
+            const response = await axios.get("https://googleauth-6mc1.onrender.com/login/sucess", { withCredentials: true });
 
             setUserdata(response.data.user)
         } catch (error) {
@@ -19,7 +19,7 @@ const Headers = () => {
 
     // logoout
     const logout = ()=>{
-        window.open("http://localhost:6005/logout","_self")
+        window.open("https://googleauth-6mc1.onrender.com/logout","_self")
     }
 
     useEffect(() => {
