@@ -13,7 +13,7 @@ const clientid = process.env.id
 const clientsecret = process.env.secret
 
 app.use(cors({
-    origin:["http://localhost:3000", "https://google-auth-two-nu.vercel.app"],
+    origin:"*",
     methods:"GET,POST,PUT,DELETE",
     credentials:true
 }));
