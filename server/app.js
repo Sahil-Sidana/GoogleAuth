@@ -13,7 +13,7 @@ const clientid = process.env.id
 const clientsecret = process.env.secret
 
 app.use(cors({
-    origin:["http://localhost:3000", "https://google-auth-5jd3d8l9y-sahil-sidanas-projects.vercel.app"],
+    origin:["http://localhost:3000", "https://google-auth-two-nu.vercel.app"],
     methods:"GET,POST,PUT,DELETE",
     credentials:true
 }));
@@ -73,8 +73,8 @@ passport.deserializeUser((user,done)=>{
 app.get("/auth/google",passport.authenticate("google",{scope:["profile","email"]}));
 
 app.get("/auth/google/callback",passport.authenticate("google",{
-    successRedirect:"https://google-auth-5jd3d8l9y-sahil-sidanas-projects.vercel.app/dashboard",
-    failureRedirect:"https://google-auth-5jd3d8l9y-sahil-sidanas-projects.vercel.app/login"
+    successRedirect:"https://google-auth-two-nu.vercel.app/dashboard",
+    failureRedirect:"https://google-auth-two-nu.vercel.app/login"
 }));
 
 app.get("/login/sucess",async(req,res)=>{
@@ -89,7 +89,7 @@ app.get("/login/sucess",async(req,res)=>{
 app.get("/logout",(req,res,next)=>{
     req.logout(function(err){
         if(err){return next(err)}
-        res.redirect("https://google-auth-5jd3d8l9y-sahil-sidanas-projects.vercel.app");
+        res.redirect("https://google-auth-two-nu.vercel.app");
     })
 });
 
